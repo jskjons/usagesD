@@ -1,21 +1,21 @@
-package com.github.jeffskj;
+package com.rei.stats;
 
 import io.undertow.Undertow;
 
 import java.io.IOException;
 import java.nio.file.Path;
 
-public class UsageD {
+public class UsagesD {
     private UsageStore usageStore;
     private UdpServer udpServer;
     private Undertow httpServer;
     
-    public UsageD(Path homeDir, int udpPort, int httpPort) throws IOException {
+    public UsagesD(Path homeDir, int udpPort, int httpPort) throws IOException {
         usageStore = new H2UsageStore(homeDir);
         udpServer = new UdpServer(udpPort);
-        udpServer.setPacketHandler(new UsageDPacketHandler(usageStore));
+        udpServer.setPacketHandler(new UsagesDPacketHandler(usageStore));
         httpServer = Undertow.builder().addHttpListener(httpPort, "0.0.0.0")
-                                       .setHandler(new UsageDHttpRequestHandler(usageStore))
+                                       .setHandler(new UsagesDHttpRequestHandler(usageStore))
                                        .build();
     }
     

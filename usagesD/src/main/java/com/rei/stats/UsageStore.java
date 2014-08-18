@@ -1,4 +1,4 @@
-package com.github.jeffskj;
+package com.rei.stats;
 
 import java.time.Instant;
 import java.util.Collection;

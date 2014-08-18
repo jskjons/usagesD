@@ -1,4 +1,4 @@
-package com.github.jeffskj;
+package com.rei.stats;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

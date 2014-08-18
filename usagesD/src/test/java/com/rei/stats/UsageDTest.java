@@ -1,4 +1,4 @@
-package com.github.jeffskj;
+package com.rei.stats;
 
 import java.io.IOException;
 
@@ -12,10 +12,10 @@ public class UsageDTest {
     
     @Test
     public void test() throws IOException, InterruptedException {
-        UsageD usageD = new UsageD(tmp.getRoot().toPath(), 9085, 8085);
+        UsagesD usageD = new UsagesD(tmp.getRoot().toPath(), 9085, 8085);
         usageD.start();
         
-        UsageDClient client = new UsageDClient("localhost", 9085);
+        UsagesDClient client = new UsagesDClient("localhost", 9085);
         
         for (int i = 0; i < 100; i++) {
             client.recordUsage("usages", "thing");

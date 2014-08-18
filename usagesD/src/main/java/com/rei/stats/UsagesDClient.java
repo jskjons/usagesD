@@ -1,4 +1,4 @@
-package com.github.jeffskj;
+package com.rei.stats;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -10,8 +10,8 @@ import java.util.concurrent.ThreadFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class UsageDClient {
-    private static final Logger logger = LoggerFactory.getLogger(UsageDClient.class);
+public class UsagesDClient {
+    private static final Logger logger = LoggerFactory.getLogger(UsagesDClient.class);
     
     private final DatagramSocket clientSocket;
 
@@ -25,7 +25,7 @@ public class UsageDClient {
         }
     });
     
-    public UsageDClient(String host, int port) {
+    public UsagesDClient(String host, int port) {
         try {
             clientSocket = new DatagramSocket();
             clientSocket.connect(new InetSocketAddress(host, port));

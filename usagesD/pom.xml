@@ -2,11 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.github.jeffskj</groupId>
-		<artifactId>usage-d-parent</artifactId>
+		<groupId>com.rei.stats</groupId>
+		<artifactId>usagesD-parent</artifactId>
 		<version>0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>usage-d</artifactId>
+	<artifactId>usagesD</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>org.slf4j</groupId>

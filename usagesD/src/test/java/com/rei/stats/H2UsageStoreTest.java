@@ -1,4 +1,4 @@
-package com.github.jeffskj;
+package com.rei.stats;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,6 +9,10 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+
+import com.rei.stats.H2UsageStore;
+import com.rei.stats.Usage;
+import com.rei.stats.UsageStore;
 
 public class H2UsageStoreTest {
 

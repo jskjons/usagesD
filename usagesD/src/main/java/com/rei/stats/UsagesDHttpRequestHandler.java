@@ -1,4 +1,4 @@
-package com.github.jeffskj;
+package com.rei.stats;
 
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
@@ -12,7 +12,7 @@ import java.util.Map;
 
 import com.google.gson.Gson;
 
-public class UsageDHttpRequestHandler implements HttpHandler {
+public class UsagesDHttpRequestHandler implements HttpHandler {
     private static final String JSON = "application/json";
     private static final String CONTENT_TYPE = "Content-Type";
     private static final String PATH = "/usages";
@@ -20,7 +20,7 @@ public class UsageDHttpRequestHandler implements HttpHandler {
     private Gson gson = new Gson();
     private UsageStore usageStore;
     
-    public UsageDHttpRequestHandler(UsageStore usageStore) {
+    public UsagesDHttpRequestHandler(UsageStore usageStore) {
         this.usageStore = usageStore;
     }
 

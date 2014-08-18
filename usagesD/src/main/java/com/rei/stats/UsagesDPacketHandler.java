@@ -1,16 +1,16 @@
-package com.github.jeffskj;
+package com.rei.stats;
 
 import java.time.Instant;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class UsageDPacketHandler implements PacketHandler {
+public class UsagesDPacketHandler implements PacketHandler {
 
-    private static final Logger logger = LoggerFactory.getLogger(UsageDPacketHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(UsagesDPacketHandler.class);
     private UsageStore usageStore;
     
-    public UsageDPacketHandler(UsageStore usageStore) {
+    public UsagesDPacketHandler(UsageStore usageStore) {
         this.usageStore = usageStore;
     }
 

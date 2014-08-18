@@ -6,6 +6,7 @@
   <packaging>pom</packaging>
   <modules>
   	<module>usagesD</module>
+  	<module>usagesD-client</module>
   </modules>
   <build>
     <pluginManagement>

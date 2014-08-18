@@ -19,7 +19,7 @@ public class UsagesDClient {
         final ThreadFactory delegate = Executors.defaultThreadFactory();
         @Override public Thread newThread(Runnable r) {
             Thread t = delegate.newThread(r);
-            t.setName("UsageD-" + t.getName());
+            t.setName("UsagesD-" + t.getName());
             t.setDaemon(true);
             return t;
         }
@@ -30,7 +30,7 @@ public class UsagesDClient {
             clientSocket = new DatagramSocket();
             clientSocket.connect(new InetSocketAddress(host, port));
         } catch (Exception e) {
-            throw new RuntimeException("Failed to start StatsD connection", e);
+            throw new RuntimeException("Failed to start UsagesD connection", e);
         }
     }   
     
@@ -46,7 +46,7 @@ public class UsagesDClient {
                 }
             });
         }catch (Exception e) {
-            logger.warn("Unable to send message to StatsD.", e);
+            logger.warn("Unable to send message to UsagesD.", e);
         }
     }
 
@@ -56,7 +56,7 @@ public class UsagesDClient {
             final DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length);
             clientSocket.send(sendPacket);
         } catch (Exception e) {
-            logger.warn("Unable to send message to StatsD.", e);
+            logger.warn("Unable to send message to UsagesD.", e);
         }
     }
 }

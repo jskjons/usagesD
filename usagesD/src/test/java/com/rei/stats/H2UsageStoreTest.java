@@ -10,10 +10,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
-import com.rei.stats.H2UsageStore;
-import com.rei.stats.Usage;
-import com.rei.stats.UsageStore;
-
 public class H2UsageStoreTest {
 
     @Rule
@@ -27,8 +23,9 @@ public class H2UsageStoreTest {
     }
     
     @Test
-    public void canRecordAndFindUsgae() {
+    public void canRecordAndFindUsage() {
         store.init();
+        store.init(); // is re-run safe
         store.recordUsage(new Usage("usages", "some thing", Instant.now().toEpochMilli()));
         store.recordUsage(new Usage("usages", "some thing", Instant.now().toEpochMilli()));
         Collection<Usage> usages = store.findUsages("usages", Instant.now().minusMillis(1000), 10);

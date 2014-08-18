@@ -30,7 +30,10 @@ public class H2UsageStore implements UsageStore {
     @Override
     public void init() {
         try {
-            new QueryRunner(ds).update("create table usages(category varchar(255), key varchar(512), timestamp bigint)");
+            QueryRunner runner = new QueryRunner(ds);
+            runner.update("create table if not exists usages(category varchar(255), key varchar(512), timestamp bigint)");
+            runner.update("create index if not exists cat_idx on usages(category)");
+            runner.update("create index if not exists key_idx on usages(key)");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
